@@ -9,4 +9,12 @@ RSpec.describe BirthdayList do
     test_birthdays = BirthdayList.new
     expect(test_birthdays.add_birthday("Otis", "25 May")).to eq [{name: "Otis", birthday: "25 May"}]
   end
+  # See them all at once with their names and birthdays each on a line in a tidy format
+  it "prints the birthday list in a clean format" do
+    test_birthdays = BirthdayList.new
+    test_birthdays.add_birthday("Otis", "25 May")
+    test_birthdays.add_birthday("Dean", "7 August")
+
+    expect { test_birthdays.show_birthdays }.to output("Otis: 25 May\nDean: 7 August\n").to_stdout
+  end
 end

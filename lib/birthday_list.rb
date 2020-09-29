@@ -7,4 +7,5 @@ class BirthdayList
   def add_birthday(name, birthday)
     @list << {name: name, birthday: birthday}
   end
+
 end
